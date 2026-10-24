@@ -79,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Heartfelt — AI Greeting Card Studio" },
+      { title: "Heartfelt — Greeting Card Studio" },
       {
         name: "description",
         content:
           "Generate personalized greeting cards with AI-written messages and matching artwork, then download them as PNG or print-ready PDF.",
       },
       { name: "author", content: "Heartfelt Studio" },
-      { property: "og:title", content: "Heartfelt — AI Greeting Card Studio" },
+      { property: "og:title", content: "Heartfelt — Greeting Card Studio" },
       {
         property: "og:description",
         content:

@@ -19,13 +19,13 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Heartfelt — AI Greeting Card Studio" },
+      { title: "Heartfelt — Greeting Card Studio" },
       {
         name: "description",
         content:
           "Pick an occasion and style — the AI writes a personal message, paints matching artwork, and hands you a finished greeting card to download as PNG or PDF.",
       },
-      { property: "og:title", content: "Heartfelt — AI Greeting Card Studio" },
+      { property: "og:title", content: "Heartfelt — Greeting Card Studio" },
       {
         property: "og:description",
         content:
@@ -138,8 +138,7 @@ function Index() {
       const data = (await res.json()) as { headline: string; message: string; artPrompt: string };
       setWritten({ headline: data.headline, message: data.message, occasion: occasionLabel });
 
-      // Conditional image generation: the artwork brief comes from the same
-      // context the message was written from.
+      // The artwork brief comes from the same context the message was written from.
       setStage("painting");
       const prompt = `${data.artPrompt}. Portrait greeting-card cover illustration, rich detail, harmonious composition. Absolutely no text, no letters, no words and no typography anywhere in the image.`;
       let finalUrl = "";
@@ -192,11 +191,11 @@ function Index() {
             </div>
             <div>
               <p className="font-display text-lg font-bold leading-tight text-foreground">Heartfelt</p>
-              <p className="text-xs text-muted-foreground">AI Greeting Card Studio</p>
+              <p className="text-xs text-muted-foreground">Greeting Card Studio</p>
             </div>
           </div>
           <span className="hidden rounded-full border border-border bg-secondary px-4 py-1.5 text-xs font-bold tracking-wide text-secondary-foreground sm:block">
-            Conditional text + image generation
+            Personalized cards for every occasion
           </span>
         </div>
       </header>
@@ -456,12 +455,12 @@ function Index() {
               {
                 icon: PenLine,
                 title: "1 · Message",
-                body: "Conditional text generation — the message is written from your occasion, tone, names and personal note.",
+                body: "The message is written from your occasion, tone, names and personal note.",
               },
               {
                 icon: ImageIcon,
                 title: "2 · Artwork",
-                body: "Conditional image generation — the same brief drives a matching illustration, painted live as you watch.",
+                body: "The same brief drives a matching illustration, painted live as you watch.",
               },
               {
                 icon: Download,
